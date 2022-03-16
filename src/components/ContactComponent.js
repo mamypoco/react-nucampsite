@@ -10,7 +10,7 @@ class Contact extends Component {
         this.state = {
             firstName: '',
             lastName: '',
-            phonNum: '',
+            phoneNum: '',
             email: '',
             agree: false,
             contactType: 'By Phone',
