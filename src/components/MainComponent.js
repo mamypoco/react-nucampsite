@@ -10,18 +10,20 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-const mapStateToProps = state => {
+const mapStoreToProps = store => {
   return {
-    campsites: state.campsites,
-    comments: state.comments,
-    partners: state.partners,
-    promotions: state.promotions
+    campsites: store.campsites,
+    comments: store.comments,
+    partners: store.partners,
+    promotions: store.promotions,
+    // bananas: store.promotions
   }
 }
 
 class Main extends Component {
   
   render() {
+    // console.log(this.props.bananas)
 
     const HomePage = () => { 
         return (
@@ -45,10 +47,10 @@ class Main extends Component {
               <Header />
               <Switch>    
                 <Route path='/home' component={HomePage} /> 
-                <Route exact path='/directory' render={()=> <Directory campsites={this.state.campsites} />} />
+                <Route exact path='/directory' render={()=> <Directory campsites={this.props.campsites} />} />
                 <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                 <Route exact path='/contactus' component={Contact} />
-                <Route exact path='/aboutus' render={() => <About partners={this.state.partners} /> } />
+                <Route exact path='/aboutus' render={() => <About partners={this.props.partners} /> } />
                 <Redirect to='/home'/>
               </Switch> 
               <Footer />
@@ -57,4 +59,4 @@ class Main extends Component {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStoreToProps)(Main));
