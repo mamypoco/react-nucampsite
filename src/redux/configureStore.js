@@ -6,7 +6,7 @@ import { Campsites } from './campsites';
 import { Comments } from './comments';
 import { Partners } from './partners';
 import { Promotions } from './promotions';
-import { InitialFeedback} from './forms';
+import { InitialFeedback  } from './forms';
 
 export const ConfigureStore =  () => {
     const store = createStore(
