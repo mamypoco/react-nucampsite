@@ -5,6 +5,10 @@ import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform } from 'react-animation-components';
 
 function RenderCard({item, isLoading, errMess}) {
+    console.group('RenderCard')
+    console.log('renderCard:', {item, isLoading, errMess})
+    console.groupEnd()
+
     if (isLoading) {
         return <Loading />;
     }
@@ -30,6 +34,7 @@ function RenderCard({item, isLoading, errMess}) {
 
 
 function Home(props) {
+    console.log('Whats in props:', props)
     return (
         <div className="container">
             <div className="row">
@@ -42,13 +47,17 @@ function Home(props) {
                 </div>
                 <div className="col-md m-1">
                     <RenderCard 
-                    item={props.promotion} 
-                    isLoading={props.promotionLoading}
-                    errMess={props.promotionErrMess}
+                        item={props.promotion} 
+                        isLoading={props.promotionLoading}
+                        errMess={props.promotionErrMess}
                     />
                 </div>
                 <div className="col-md m-1">
-                    <RenderCard item={props.partner} />               
+                    <RenderCard 
+                        item={props.partner} 
+                        isLoading={props.partnersLoading}
+                        errMess={props.partnersErrMess}
+                    />               
                 </div>
             </div>
         </div>
