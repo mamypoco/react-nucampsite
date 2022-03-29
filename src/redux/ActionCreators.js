@@ -152,8 +152,7 @@ export const addPromotions = promotions => ({
 });
 
 
-//fetch partners
-
+//fetch partners//
 export const fetchPartners = () => dispatch => {
 
     dispatch(partnersLoading());

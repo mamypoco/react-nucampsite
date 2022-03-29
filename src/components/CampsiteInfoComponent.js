@@ -17,7 +17,7 @@ function RenderCampsite({campsite}) {
                 <FadeTransform
                     in
                     transformProps={{
-                        exitTransfrom: 'scale(0.5) translateY(-50%)'
+                        exitTransform: 'scale(0.5) translateY(-50%)'
                     }}>
                     <Card>
                     <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
@@ -27,7 +27,7 @@ function RenderCampsite({campsite}) {
                     </Card>
                 </FadeTransform>
             </div>
-        )
+        );
     }
 
 class CommentForm extends Component {

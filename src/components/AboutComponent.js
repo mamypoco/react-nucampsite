@@ -5,7 +5,7 @@ import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './LoadingComponent';
 
 function RenderPartner({ partner }) {
-    console.log(partner)
+    // console.log(partner)
     if (partner) {
         return (
             <React.Fragment>
@@ -14,7 +14,6 @@ function RenderPartner({ partner }) {
                     <Media heading>{partner.name} </Media>
                     {partner.description}
                 </Media> 
-
             </React.Fragment>
         )
     } 
@@ -22,36 +21,32 @@ function RenderPartner({ partner }) {
 }
 
 function PartnerList(props) {
-    const partners = props.partners.map(prtnr => {
+    
+    const partners = props.partners.partners.map(partner => {
+        return (
+            <Media tag="li" key={partner.id}><RenderPartner partner={partner} /></Media>
+        );
+    });        
+        
         if (props.partners.isLoading) {
-            return (
-                <Loading />
-            )
+            return 
+                <Loading />;
         }
         if (props.partners.errMess) {
             return (
                 <div className= "col">
                     <h4>{props.partners.errMess}</h4>
                 </div>
-            )
+            );
         }
         return (
             <div classsName="col mt-4">
                 <Media list>{partners}</Media>
             </div>
         )
-    });
-}
+    }
 
 function About(props) {
-
-    const partners = props.partners.map(prtnr => {
-        return (
-            // <h5>{partner.name}</h5>
-            <Media tag="li" key={prtnr.id}><RenderPartner partner={prtnr} /></Media>
-        );
-    });
-    console.log(partners)
 
     return (
         <div className="container">

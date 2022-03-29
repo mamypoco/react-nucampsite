@@ -5,9 +5,9 @@ import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform } from 'react-animation-components';
 
 function RenderCard({item, isLoading, errMess}) {
-    console.group('RenderCard')
-    console.log('renderCard:', {item, isLoading, errMess})
-    console.groupEnd()
+    // console.group('RenderCard')
+    // console.log('renderCard:', {item, isLoading, errMess})
+    // console.groupEnd()
 
     if (isLoading) {
         return <Loading />;
@@ -34,7 +34,7 @@ function RenderCard({item, isLoading, errMess}) {
 
 
 function Home(props) {
-    console.log('Whats in props:', props)
+    
     return (
         <div className="container">
             <div className="row">
