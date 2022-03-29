@@ -179,7 +179,6 @@ export const fetchPartners = () => dispatch => {
         .catch(error => dispatch(partnersFailed(error.message)));    
 }
 
-
 export const partnersLoading = partners => ({
     type: ActionTypes.PARTNERS_LOADING,
 });
@@ -197,6 +196,45 @@ export const addPartners = partners => {
     }   
 };
 
+//fetch postFeedback
+export const postFeedback = (feedback) =>  {
+    const newFeedback = {
+        firstName: feedback.firstName,
+        lastName: feedback.lastName,
+        phone: feedback.phone,
+        email: feedback.email,
+        contactMethod: feedback.contactMethod,
+        feedback: feedback.feedback,
+        id: feedback.id
+    };
+
+    return fetch(baseUrl + 'feedback', {
+            method: "POST", 
+            body: JSON.stringify(newFeedback),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                return response;
+                
+                
+            } else {
+                const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }      
+        },
+            error => { throw error; }
+        )
+        // .then(response => response.json())
+        .then(alert('Thank you for your feedback' + JSON.stringify(newFeedback)))
+        .catch(error => {
+            console.log('post comment', error.message);
+            alert('Your comment could not be posted\nError: ' + error.message);
+        });
+};
 
 
 
