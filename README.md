@@ -4,7 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+To run the project, you will need to run json server:
+
+1. Download the zip file
+2. Place outside of the project folder
+3. Install json server: npm install -g json-server
+4. Run: ###json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000
+
+In the project directory, please run:
+
+### `yarn install`
 
 ### `yarn start`
 
