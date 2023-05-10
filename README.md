@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To run the project, you will need to run json server so Home and Directry pages will show up:
 
-1. Download the zip file
+1. Download the zip file from <a href="https://mami-dev.s3.amazonaws.com/nucamp/json-server.zip">HERE</a>
 2. Place outside of the project folder
 3. Install json server: npm install -g json-server
 4. Navigate the json-server folder and run:
