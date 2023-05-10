@@ -11,7 +11,7 @@ To run the project, you will need to run json server so Home and Directry pages 
 3. Install json server: npm install -g json-server
 4. Navigate the json-server folder and run:
 
-### json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000
+### `json-server -H 0.0.0.0 --watch db.json -p 3001 -d 2000`
 
 In the project directory, please run:
 
